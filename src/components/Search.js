@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react"
 
-function Search() {
+function Search({ onSearch }) {
+  const [searchInput, setSearchInput] = useState("")
+
+  const handleChange = (e) => {
+    onSearch(e.target.value)
+  }
+
   return (
     <div className="ui search">
       <div className="ui icon input">
-        <input className="prompt" />
+        <input onChange={handleChange} className="prompt" />
         <i className="search icon" />
       </div>
     </div>
-  );
+  )
 }
 
-export default Search;
+export default Search
