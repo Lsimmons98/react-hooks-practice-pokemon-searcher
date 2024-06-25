@@ -16,7 +16,7 @@ function PokemonPage() {
             pokemon.name.toLowerCase().includes(searchInput.toLowerCase())
           )
         )
-      : setSearchedPokemon("")
+      : setSearchedPokemon(false)
   }
   const fetchData = () => setTriggerFetch(!triggerFetch)
 
@@ -33,7 +33,7 @@ function PokemonPage() {
     <Container>
       <h1>Pokemon Searcher</h1>
       <br />
-      <PokemonForm />
+      <PokemonForm fetchData={fetchData} />
       <br />
       <Search onSearch={onSearch} />
       <br />

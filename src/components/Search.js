@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 
 function Search({ onSearch }) {
-  const [searchInput, setSearchInput] = useState("")
-
   const handleChange = (e) => {
     onSearch(e.target.value)
   }
